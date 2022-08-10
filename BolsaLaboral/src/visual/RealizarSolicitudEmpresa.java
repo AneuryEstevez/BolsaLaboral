@@ -193,7 +193,10 @@ public class RealizarSolicitudEmpresa extends JDialog {
 				
 				cbxCategoria = new JComboBox();
 				cbxCategoria.setEnabled(false);
-				cbxCategoria.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Turismo", "Salud", "Educación", "Comercio", "Industrial", "Finanzas", "Telecomunicaciones", "Transporte"}));
+				ArrayList<String> c = new ArrayList<>();
+				c.add("<Seleccione>");
+				c.addAll(Control.getInstance().getCategorias());
+				cbxCategoria.setModel(new DefaultComboBoxModel(c.toArray()));
 				cbxCategoria.setBounds(79, 6, 172, 27);
 				panel_1.add(cbxCategoria);
 				{
@@ -429,7 +432,7 @@ public class RealizarSolicitudEmpresa extends JDialog {
 							String nombre = txtNombre.getText();
 							String telefono = txtTelefono.getText();
 							String direccion = txtDireccion.getText();
-							String provincia = cbxProvincia.getSelectedItem().toString();
+							String provincia = cbxMunicipio.getSelectedItem().toString();
 							
 							aux = new Empresa(id, nombre, categoria, direccion, telefono, provincia);
 							Control.getInstance().RegistrarEmpresa(aux);
