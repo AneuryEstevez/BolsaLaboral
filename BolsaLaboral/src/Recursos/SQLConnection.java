@@ -13,11 +13,6 @@ import javax.swing.JOptionPane;
 
 public class SQLConnection {
 	
-//	private static String server = "192.168.100.118";
-//	private static String dbname = "BolsaLaboral;";
-//	private static String username = "aestevez;";
-//	private static String password = "Eict@2022;";
-	
 	private static String server = "localhost";
 	private static String dbname = "BolsaLaboral;";
 	private static String username = "sa;";
